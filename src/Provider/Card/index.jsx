@@ -5,6 +5,7 @@ export const CardContext = createContext();
 
 const CardProvider = ({ children }) => {
     const [characters, setCharacters] = useState();
+    const [isClosed, setIsClosed] = useState(false)
 
     const loadcharacters = () => {
         api.get(`characters`)
@@ -17,10 +18,20 @@ const CardProvider = ({ children }) => {
     useEffect(() => {
         loadcharacters()
     }, [])
+
+    if(!isClosed){
+        document.querySelector('body').style.overflow ='auto'
+    }
+    if(isClosed){
+        document.querySelector('body').style.overflow ='hidden'
+    }
    
 
     return (
-        <CardContext.Provider value={{ characters }}>
+        <CardContext.Provider value={{ 
+            characters,
+            setIsClosed,
+            isClosed}}>
             {children}
         </CardContext.Provider>
     )
