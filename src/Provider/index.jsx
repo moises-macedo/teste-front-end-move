@@ -1,9 +1,12 @@
 import CardProvider from "./Card"
+import FavoritesProvider from "./Favorites"
 
-const Provider = ({children})=>{
-    return(
+const Provider = ({ children }) => {
+    return (
         <CardProvider>
-            {children}
+            <FavoritesProvider>
+                {children}
+            </FavoritesProvider>
         </CardProvider>
     )
 }

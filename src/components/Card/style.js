@@ -110,7 +110,7 @@ p{
         bottom: 40px;
         right:10px;
         font-size: 24px;
-        color: yellow;
+        color: #c0392b;
         
     }
 

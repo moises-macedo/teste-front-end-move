@@ -17,8 +17,7 @@ const CardProvider = ({ children }) => {
     useEffect(() => {
         loadcharacters()
     }, [])
-
-    console.log(characters)
+   
 
     return (
         <CardContext.Provider value={{ characters }}>
