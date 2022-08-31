@@ -7,6 +7,7 @@ import { FavoritesContext } from "../../Provider/Favorites";
 
 
 export const Card = () => {
+    
 
 
     const { characters } = useContext(CardContext)
