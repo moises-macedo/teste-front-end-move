@@ -1,13 +1,19 @@
 import { useContext, useState } from "react"
 import { CardContext } from "../../Provider/Card"
 import { Container, LiDescription, LiImg, Ul } from "./style";
-import { AiOutlineStar } from 'react-icons/ai';
+import { AiFillHeart } from 'react-icons/ai';
+import { FavoritesContext } from "../../Provider/Favorites";
 
 
 
 export const Card = () => {
 
+
     const { characters } = useContext(CardContext)
+    const { addFavorites, favorites } = useContext(FavoritesContext)
+   
+
+
     return (
         <Container>
             {characters?.map((el) => {
@@ -27,8 +33,8 @@ export const Card = () => {
                             <p>{status}</p>
                         </LiDescription>
                         <LiDescription>
-                            <button>
-                                <p><AiOutlineStar /></p>
+                            <button onClick={() => addFavorites(el)}>
+                                <p><AiFillHeart /></p>                                
                             </button>
                         </LiDescription>
                     </Ul>
